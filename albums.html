@@ -1,0 +1,76 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Best-selling albums</title>
+  <script type="text/javascript" src="albums.json"> </script>
+  <script src="albums.js"></script>
+  <style>
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    #label {
+        text-align: center;
+    }
+
+    #hitsTable {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #hitsTable td, #hitsTable th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #hitsTable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #42919b;
+        color: white;
+    }
+
+    #hitsTable tr:nth-child(even){background-color: #f2f2f2;}
+
+    #hitsTable tr:hover {background-color: #ddd;}
+
+  </style>
+
+</head>
+
+<body onload = "selectYearStr(); selectCountryStr(); filter();" >
+
+  <h1>Best Selling Albums</h1>
+  <h2>A list of best-selling albums by year and country</h2>
+
+  <div id="label">
+    <label for="selectYear">Please select a year: </label>
+    <!--onchange event should be use in both selectYear and selectCountry-->
+    <select id="selectYear" onchange = "filter()">
+    <!-- js file will insert years as options here -->
+    </select>
+
+    <label for="selectCountry">Please select a country of origin: </label>
+    <select id="selectCountry" onchange = "filter()">
+      <!-- js file will insert contries as options here -->
+    </select>
+  </div>
+
+  <table id="hitsTable">
+    <tr>
+      <th>Year</th>
+      <th>Artist</th>
+      <th>Nationality</th>
+      <th>Album</th>
+    </tr>
+  </table>
+</body>
+</html>
